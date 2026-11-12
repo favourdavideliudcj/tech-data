@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AEGIS // Enterprise Cybersecurity & Threat Defense</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <span class="shield-icon">&#9670;</span> AEGIS<span>SEC</span>
+    </div>
+    <nav>
+      <a href="#solutions">Defense Suite</a>
+      <a href="#analyzer">Security Tools</a>
+      <a href="#telemetry">Live Telemetry</a>
+    </nav>
+    <button class="btn-alert" id="openEmergencyBtn">24/7 Incident Response</button>
+  </header>
+
+  <section class="hero">
+    <div class="status-pill">
+      <span class="pulse-dot"></span> GLOBAL THREAT LEVEL: GUARDED &bull; ALL NODES ACTIVE
+    </div>
+    <h1>Autonomous Defense for<br><span>Zero-Trust Networks.</span></h1>
+    <p>Neutralize ransomware, zero-day exploits, and credential leaks in milliseconds with AI-driven endpoint telemetry.</p>
+    <div class="hero-actions">
+      <a href="#analyzer" class="btn-emerald">Test Password Entropy</a>
+      <a href="#solutions" class="btn-outline">Explore Architecture</a>
+    </div>
+  </section>
+
+  <main>
+    <!-- Defense Solutions -->
+    <section id="solutions" class="container">
+      <div class="section-head">
+        <h2>DEFENSE ARCHITECTURE</h2>
+        <p>Multi-layered cryptographic and behavioral protection across cloud and hybrid workloads.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="sec-card">
+          <div class="card-code">MODULE // 01</div>
+          <h3>Autonomous XDR</h3>
+          <p>Detects lateral movement and isolates compromised containers automatically before data exfiltration occurs.</p>
+        </div>
+
+        <div class="sec-card">
+          <div class="card-code">MODULE // 02</div>
+          <h3>Post-Quantum Vault</h3>
+          <p>Hardware-backed key management utilizing lattice-based encryption algorithms to future-proof sensitive assets.</p>
+        </div>
+
+        <div class="sec-card">
+          <div class="card-code">MODULE // 03</div>
+          <h3>Continuous Pen-Testing</h3>
+          <p>Automated red-team bots probe your public attack surface hourly and generate instant remediation patches.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Password & Entropy Analyzer -->
+    <section id="analyzer" class="container">
+      <div class="section-head">
+        <h2>CRYPTOGRAPHIC ENTROPY ANALYZER</h2>
+        <p>Test how resilient a passphrase is against modern GPU brute-force clusters (runs 100% locally in your browser).</p>
+      </div>
+
+      <div class="tool-box">
+        <div class="input-group">
+          <input type="text" id="passInput" placeholder="Type a sample password or passphrase to audit..." autocomplete="off">
+          <button class="btn-emerald" id="generatePassBtn">Generate Strong Key</button>
+        </div>
+
+        <div class="meter-track">
+          <div class="meter-fill" id="strengthBar"></div>
+        </div>
+
+        <div class="audit-stats">
+          <div class="audit-item">
+            <span>STRENGTH RATING</span>
+            <strong id="strengthLabel">AWAITING INPUT</strong>
+          </div>
+          <div class="audit-item">
+            <span>ENTROPY BITS</span>
+            <strong id="entropyBits">0 bits</strong>
+          </div>
+          <div class="audit-item">
+            <span>EST. CRACK TIME</span>
+            <strong id="crackTime">--</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simulated Live Threat Feed -->
+    <section id="telemetry" class="container">
+      <div class="section-head flex-head">
+        <div>
+          <h2>LIVE GLOBAL TELEMETRY</h2>
+          <p>Real-time anonymized intrusion attempts blocked across Aegis edge sensors.</p>
+        </div>
+        <button class="btn-outline" id="toggleFeedBtn">Pause Stream</button>
+      </div>
+
+      <div class="terminal-window" id="threatLog">
+        <div class="log-line"><span class="log-time">[10:08:41 UTC]</span> <span class="log-ok">BLOCKED</span> SQL Injection attempt &bull; Origin: 185.220.101.4 &bull; Node: EU-CENTRAL</div>
+        <div class="log-line"><span class="log-time">[10:08:44 UTC]</span> <span class="log-ok">BLOCKED</span> Credential Stuffing burst (14,200 req/s) &bull; Node: US-EAST</div>
+        <div class="log-line"><span class="log-time">[10:08:49 UTC]</span> <span class="log-warn">ISOLATED</span> Unsigned binary execution quarantined &bull; Endpoint: WRK-8841</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AEGIS SECURITY SYSTEMS. ISO 27001 &amp; SOC2 TYPE II CERTIFIED.</p>
+  </footer>
+
+  <!-- Emergency Incident Response Modal -->
+  <div class="modal" id="incidentModal">
+    <div class="modal-box">
+      <div class="alert-badge">PRIORITY 1 DISPATCH</div>
+      <h3>ACTIVE BREACH RESPONSE</h3>
+      <p>Experiencing an active ransomware or intrusion event? Our rapid-response forensics team deploys within 15 minutes.</p>
+      <form id="incidentForm">
+        <input type="text" placeholder="Organization Name" required>
+        <input type="email" placeholder="Emergency Contact Email" required>
+        <select required>
+          <option value="">Select Incident Type...</option>
+          <option value="ransomware">Ransomware / Encryption Event</option>
+          <option value="ddos">Active DDoS Attack</option>
+          <option value="unauthorized">Unauthorized Root / Cloud Access</option>
+        </select>
+        <div class="modal-actions">
+          <button type="submit" class="btn-alert">Dispatch Forensics Team</button>
+          <button type="button" class="btn-outline" id="closeIncidentBtn">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

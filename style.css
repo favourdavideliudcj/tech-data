@@ -1,0 +1,426 @@
+:root {
+    --bg-dark: #05080c;
+    --bg-surface: #0b1118;
+    --bg-terminal: #030508;
+    --emerald: #10b981;
+    --emerald-glow: rgba(16, 185, 129, 0.25);
+    --amber: #f59e0b;
+    --crimson: #ef4444;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.08);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  
+  .card-code, .terminal-window, .audit-item strong, .status-pill {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5, 8, 12, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .brand {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .shield-icon, .brand span {
+    color: var(--emerald);
+  }
+  
+  nav {
+    display: flex;
+    gap: 2.2rem;
+  }
+  
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  nav a:hover {
+    color: var(--emerald);
+  }
+  
+  /* Buttons */
+  .btn-emerald {
+    background: var(--emerald);
+    color: #03150e;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .btn-emerald:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px var(--emerald-glow);
+  }
+  
+  .btn-outline {
+    background: var(--bg-surface);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s;
+  }
+  
+  .btn-outline:hover {
+    border-color: var(--emerald);
+  }
+  
+  .btn-alert {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    padding: 0.65rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .btn-alert:hover {
+    background: rgba(239, 68, 68, 0.28);
+  }
+  
+  /* Hero */
+  .hero {
+    padding: 6rem 6% 5rem;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.14), transparent 65%);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--emerald);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--emerald);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--emerald);
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin-bottom: 1.2rem;
+    letter-spacing: -1px;
+  }
+  
+  .hero h1 span {
+    color: var(--emerald);
+  }
+  
+  .hero p {
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0 auto 2.2rem;
+    font-size: 1.08rem;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Containers */
+  .container {
+    padding: 4.5rem 6%;
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+  
+  .section-head {
+    margin-bottom: 2.2rem;
+  }
+  
+  .flex-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .section-head h2 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+  }
+  
+  .section-head p {
+    color: var(--text-muted);
+  }
+  
+  /* Defense Cards */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .sec-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  
+  .sec-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--emerald);
+  }
+  
+  .card-code {
+    color: var(--emerald);
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+  
+  .sec-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .sec-card p {
+    color: var(--text-muted);
+    font-size: 0.94rem;
+  }
+  
+  /* Entropy Analyzer */
+  .tool-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+    flex-wrap: wrap;
+  }
+  
+  .input-group input {
+    flex: 1;
+    min-width: 240px;
+    background: var(--bg-terminal);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    outline: none;
+  }
+  
+  .input-group input:focus {
+    border-color: var(--emerald);
+  }
+  
+  .meter-track {
+    height: 10px;
+    background: var(--bg-terminal);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  
+  .meter-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--crimson);
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+  
+  .audit-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  
+  .audit-item {
+    background: var(--bg-terminal);
+    border: 1px solid var(--border);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+  }
+  
+  .audit-item span {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+  
+  .audit-item strong {
+    font-size: 1.05rem;
+    color: var(--emerald);
+  }
+  
+  /* Terminal Telemetry */
+  .terminal-window {
+    background: var(--bg-terminal);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem;
+    font-size: 0.85rem;
+    max-height: 240px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .log-time {
+    color: var(--text-muted);
+  }
+  
+  .log-ok {
+    color: var(--emerald);
+    font-weight: 700;
+  }
+  
+  .log-warn {
+    color: var(--amber);
+    font-weight: 700;
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .modal.open {
+    display: flex;
+  }
+  
+  .modal-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--crimson);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 100%;
+  }
+  
+  .alert-badge {
+    display: inline-block;
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+  }
+  
+  .modal-box h3 {
+    margin-bottom: 0.4rem;
+  }
+  
+  .modal-box p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .modal-box input, .modal-box select {
+    width: 100%;
+    background: var(--bg-terminal);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.9rem;
+    outline: none;
+  }
+  
+  .modal-actions {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: flex-end;
+  }
+  
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 6%;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 768px) {
+    nav { display: none; }
+  }
+  
